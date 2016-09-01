@@ -8,7 +8,6 @@
     "skipDefaultLibCheck": true
   },
   "exclude": [
-    "node_modules",
-    "wwwroot"
+    "node_modules"
   ]
 }

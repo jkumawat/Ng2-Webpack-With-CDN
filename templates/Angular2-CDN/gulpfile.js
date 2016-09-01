@@ -1,16 +1,9 @@
-﻿/// <binding />
-var settings = require('./appsettings.json');
+/// <binding BeforeBuild='typescript:compile' AfterBuild='module:copy' />
 
 var gulp = require('gulp');
-var merge = require('merge-stream');
-var webpack = require('webpack');
-var del = require('del');
-var runSequence = require('run-sequence');
 var path = require('path');
-var ng2Template = require('gulp-inline-ng2-template');
 var ts = require('gulp-typescript');
 var sourcemaps = require('gulp-sourcemaps');
-var shell = require('gulp-shell');
 
 var paths = {};
 paths.webroot = path.join(__dirname, 'wwwroot');
@@ -21,6 +14,23 @@ paths.ng2AppShared = path.join(paths.ng2App, 'node_modules', 'shared');
 gulp.task('module:copy', function () {
     return gulp.src([
             path.join(paths.app, '**')
-    ])
+        ])
         .pipe(gulp.dest(paths.ng2AppShared));
+});
+
+gulp.task('typescript:compile', function () {
+    var tsProject = ts.createProject({
+        target: 'es5',
+        moduleResolution: 'node',
+        experimentalDecorators: true,
+        emitDecoratorMetadata: true
+    });
+
+    return gulp.src([
+        path.join(paths.app, '**/*.ts')
+    ])
+    .pipe(sourcemaps.init())
+    .pipe(ts(tsProject))
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest(paths.app));
 });

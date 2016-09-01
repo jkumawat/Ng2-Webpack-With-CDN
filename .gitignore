@@ -45,5 +45,10 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
-.templates/Angular2Spa/node_modules/*
-.templates/Angular2-CDN/node_modules/*
+
+#Custom ignores
+.vs/*
+templates/**/node_modules/*
+templates/**/bin/*
+templates/**/obj/*
+templates/**/project.lock.json

@@ -15,19 +15,8 @@ export class AuthGuard implements CanActivate {
     }
 
     canActivate() {
-        console.log("Actaivated Route");
+        console.log("Activated Route");
+
         return true;
-
-        //let url: string = "";
-        //this._activatedRoute.url.subscribe(res => {
-        //    url = res[0].path;
-        //});
-
-        //if (this.publicRoutes[url] || tokenNotExpired('jwt')) {
-        //    return true;
-        //}
-
-        //this._router.navigate(['/login']);
-        //return false;
     }
 }
