@@ -1,9 +1,9 @@
 # Ng2-Webpack-With-CDN
 Angular2 web app with Webpack
 
-I have started playing with JavascriptServices from HTTPS://GITHUB.COM/ASPNET/JAVASCRIPTSERVICES .
+We have started playing with JavascriptServices from HTTPS://GITHUB.COM/ASPNET/JAVASCRIPTSERVICES .
 
-I wanted to have a CDN project which contains, all shared components for another projects. 
+We wanted to have a CDN project which contains, all shared components for another projects. 
 
 To get Started,
 
