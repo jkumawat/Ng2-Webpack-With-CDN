@@ -1,5 +1,5 @@
 # Ng2-Webpack-With-CDN
-Angular2 with Webpack Application
+Angular2 web app with Webpack
 
 I have started playing with JavascriptServices from HTTPS://GITHUB.COM/ASPNET/JAVASCRIPTSERVICES .
 
